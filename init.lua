@@ -161,7 +161,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  { 'tpope/vim-obsession', lazy = false },
+  { 'tpope/vim-obsession',         lazy = false },
   {
     'christoomey/vim-tmux-navigator',
     lazy = false,
@@ -173,16 +173,16 @@ require('lazy').setup({
       'TmuxNavigatePrevious',
     },
     keys = {
-      { '<c-h>', '<cmd><C-U>TmuxNavigateLeft<cr>' },
-      { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
-      { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
-      { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
+      { '<c-h>',  '<cmd><C-U>TmuxNavigateLeft<cr>' },
+      { '<c-j>',  '<cmd><C-U>TmuxNavigateDown<cr>' },
+      { '<c-k>',  '<cmd><C-U>TmuxNavigateUp<cr>' },
+      { '<c-l>',  '<cmd><C-U>TmuxNavigateRight<cr>' },
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { 'nvim-tree/nvim-web-devicons', opts = {} },
-  { 'nvim-tree/nvim-tree.lua', opts = {} },
+  { 'nvim-tree/nvim-tree.lua',     opts = {} },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -225,33 +225,33 @@ require('lazy').setup({
     end,
   },
 
-  { 'micangl/cmp-vimtex', opts = {} },
+  { 'micangl/cmp-vimtex',   opts = {} },
 
   {
     'andweeb/presence.nvim',
     -- The setup config table shows all available config options with their default values:
     opts = {
       -- General options
-      auto_update = true, -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
+      auto_update = true,                             -- Update activity based on autocmd events (if `false`, map or manually execute `:lua package.loaded.presence:update()`)
       neovim_image_text = 'The One True Text Editor', -- Text displayed when hovered over the Neovim image
-      main_image = 'neovim', -- Main image display (either "neovim" or "file")
-      client_id = '793271441293967371', -- Use your own Discord application client id (not recommended)
-      log_level = nil, -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
-      debounce_timeout = 10, -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
-      enable_line_number = false, -- Displays the current line number instead of the current project
-      blacklist = {}, -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
-      buttons = true, -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
-      file_assets = {}, -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
-      show_time = true, -- Show the timer
+      main_image = 'neovim',                          -- Main image display (either "neovim" or "file")
+      client_id = '793271441293967371',               -- Use your own Discord application client id (not recommended)
+      log_level = nil,                                -- Log messages at or above this level (one of the following: "debug", "info", "warn", "error")
+      debounce_timeout = 10,                          -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
+      enable_line_number = false,                     -- Displays the current line number instead of the current project
+      blacklist = {},                                 -- A list of strings or Lua patterns that disable Rich Presence if the current file name, path, or workspace matches
+      buttons = true,                                 -- Configure Rich Presence button(s), either a boolean to enable/disable, a static table (`{{ label = "<label>", url = "<url>" }, ...}`, or a function(buffer: string, repo_url: string|nil): table)
+      file_assets = {},                               -- Custom file asset definitions keyed by file names and extensions (see default config at `lua/presence/file_assets.lua` for reference)
+      show_time = true,                               -- Show the timer
 
       -- Rich Presence text options
-      editing_text = 'Editing %s', -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
-      file_explorer_text = 'Browsing %s', -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
-      git_commit_text = 'Committing changes', -- Format string rendered when committing changes in git (either string or function(filename: string): string)
+      editing_text = 'Editing %s',              -- Format string rendered when an editable file is loaded in the buffer (either string or function(filename: string): string)
+      file_explorer_text = 'Browsing %s',       -- Format string rendered when browsing a file explorer (either string or function(file_explorer_name: string): string)
+      git_commit_text = 'Committing changes',   -- Format string rendered when committing changes in git (either string or function(filename: string): string)
       plugin_manager_text = 'Managing plugins', -- Format string rendered when managing plugins (either string or function(plugin_manager_name: string): string)
-      reading_text = 'Reading %s', -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
-      workspace_text = 'Working on %s', -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
-      line_number_text = 'Line %s out of %s', -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
+      reading_text = 'Reading %s',              -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer (either string or function(filename: string): string)
+      workspace_text = 'Working on %s',         -- Format string rendered when in a git repository (either string or function(project_name: string|nil, filename: string): string)
+      line_number_text = 'Line %s out of %s',   -- Format string rendered when `enable_line_number` is set to true (either string or function(line_number: number, line_count: number): string)
     },
   },
 
@@ -270,7 +270,7 @@ require('lazy').setup({
   -- after the plugin has been loaded:
   --  config = function() ... end
 
-  { -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
@@ -355,7 +355,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -463,7 +463,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP.
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -649,7 +649,9 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        'stylua',    -- Used to format Lua code
+        'csharpier',
+        'netcoredbg' -- .NET Core Debugger
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -707,6 +709,40 @@ require('lazy').setup({
         java = { 'google-java-format' },
         python = { 'black' },
         yaml = { 'yamlfmt' },
+        c_sharp = { 'csharpier' }
+      },
+    },
+  },
+  {
+    'seblyng/roslyn.nvim',
+    ft = { 'cs', 'razor' },
+    opts = {
+      -- Leave args empty to let the plugin auto-download and map the Microsoft blob
+      -- or define custom paths if you manage the binary via a custom Mason registry fork.
+      config = {
+        settings = {
+          ['csharp|inlay_hints'] = {
+            csharp_enable_inlay_hints_for_implicit_object_creation = true,
+            csharp_enable_inlay_hints_for_implicit_variable_types = true,
+            csharp_enable_inlay_hints_for_lambda_parameter_types = true,
+            csharp_enable_inlay_hints_for_types = true,
+            dotnet_enable_inlay_hints_for_indexer_parameters = true,
+            dotnet_enable_inlay_hints_for_literal_parameters = true,
+            dotnet_enable_inlay_hints_for_object_creation_parameters = true,
+            dotnet_enable_inlay_hints_for_other_parameters = true,
+            dotnet_enable_inlay_hints_for_parameters = true,
+            dotnet_suppress_inlay_hints_for_parameters_that_differ_only_by_suffix = true,
+            dotnet_suppress_inlay_hints_for_parameters_that_match_argument_name = true,
+            dotnet_suppress_inlay_hints_for_parameters_that_match_method_intent = true,
+          },
+          ['csharp|code_lens'] = {
+            dotnet_enable_references_code_lens = true,
+          },
+          ['csharp|background_analysis'] = {
+            dotnet_compiler_diagnostics_scope = 'fullSolution',
+            dotnet_analyzer_diagnostics_scope = 'fullSolution',
+          },
+        },
       },
     },
   },
@@ -892,7 +928,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'c_sharp', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -921,7 +957,7 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
@@ -955,6 +991,78 @@ require('lazy').setup({
     },
   },
 })
+
+
+-- Snippet to compile maven java project
+local function run_java_project()
+  -- 1. Define the search logic
+  local current_buffer_path = vim.api.nvim_buf_get_name(0)
+  local current_dir = vim.fs.dirname(current_buffer_path)
+
+  -- Search UPWARD from the current file (standard IDE behavior)
+  local result = vim.fs.find('pom.xml', {
+    upward = true,
+    stop = vim.loop.os_homedir(),
+    path = current_dir
+  })
+
+  local pom_path = result[1]
+
+  -- 2. Fallback: If not found upward, check immediate subdirs of CWD
+  -- (Fixes the case where you are at 'Distributed-Computer-System/' root)
+  if not pom_path then
+    local handle = vim.loop.fs_scandir(vim.fn.getcwd())
+    if handle then
+      while true do
+        local name, type = vim.loop.fs_scandir_next(handle)
+        if not name then break end
+        if type == 'directory' then
+          local check = vim.fn.getcwd() .. "/" .. name .. "/pom.xml"
+          if vim.fn.filereadable(check) == 1 then
+            pom_path = check
+            break
+          end
+        end
+      end
+    end
+  end
+
+  -- 3. Execute or Fail
+  if pom_path then
+    print("Found POM at: " .. pom_path)
+    vim.cmd('wa') -- Save all files first
+
+    print("Compiling project...")
+    local compile_cmd = string.format('mvn -f "%s" clean compile', pom_path)
+
+    -- Run compile and check if it succeeded
+    -- vim.fn.system returns output, v:shell_error checks exit code
+    vim.fn.system(compile_cmd)
+    if vim.v.shell_error ~= 0 then
+      print("Compilation failed! Check messages.")
+      return
+    end
+
+    -- Construct the maven command pointing to the found POM
+    -- Note: Ensure mainClass matches your project
+    local server_compile = string.format('mvn -f "%s" exec:java -Dexec.mainClass="org.example.server.ServerMain"',
+      pom_path)
+    local client_compile = string.format(
+      'sleep 5 && mvn -f "%s" exec:java -Dexec.mainClass="org.example.client.ClientMain"',
+      pom_path)
+
+    vim.cmd('botright 12new')
+    -- Open in a vertical split terminal
+    vim.cmd('terminal ' .. server_compile)
+    vim.cmd('vsplit | terminal ' .. client_compile)
+    vim.cmd('startinsert') -- Auto-focus the terminal
+  else
+    print("Error: No pom.xml found in parent or immediate subdirectories.")
+  end
+end
+
+-- 4. Set the Keybinding (F5) Disabled for now
+-- vim.keymap.set('n', '<F5>', run_java_project, { desc = "Auto-detect POM and Run Java" })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
